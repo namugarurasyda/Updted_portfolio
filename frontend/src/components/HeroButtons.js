@@ -27,7 +27,7 @@ const HeroButtons = () => {
           variant='contained'
           size='large'
           color='primary'
-          href='myresume'
+          href='https://europa.eu/europass/eportfoliio/screen/my-library?lang=en'
           startIcon={<InfoIcon />}
           fullWidth={isMd ? false : true}
           disableElevation={true}
