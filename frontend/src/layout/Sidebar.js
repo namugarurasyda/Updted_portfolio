@@ -20,6 +20,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ListIcon from '@mui/icons-material/FormatListBulleted';
 import TextIcon from '@mui/icons-material/TextSmsOutlined';
+import CodeIcon from '@mui/icons-material/Code';
 
 import CustomButton from '../components/CustomButton';
 
@@ -59,13 +60,16 @@ const Sidebar = ({ open, onClose }) => {
                   textDecoration='none'
                   marginLeft='10px'
                 >
-                  Bob&apos;s Programming Academy
+                  NAMUGARURA&apos;s  SYDA portfolio
                 </Typography>
               </IconButton>
             </Link>
           </Box>
           <Box paddingY={2}>
             <CustomButton href='#home' icon={<HomeIcon />} text='Home' />
+            <Box paddingY={1}>
+              <CustomButton href='#skills' icon={<CodeIcon />} text='Skills' />
+            </Box>
             <Box paddingY={1}>
               <CustomButton href='#about' icon={<InfoIcon />} text='About' />
             </Box>
@@ -101,7 +105,8 @@ const Sidebar = ({ open, onClose }) => {
               <Stack direction='row' spacing={1}>
                 <IconButton
                   aria-label='LinkedIn'
-                  href='#'
+                  href='https://www.linkedin.com/in/namugarura-syda-14008a271/'
+                  
                   target='_blank'
                   sx={{
                     color: theme.palette.primary.main,
@@ -109,19 +114,10 @@ const Sidebar = ({ open, onClose }) => {
                 >
                   <LinkedInIcon fontSize='large' />
                 </IconButton>
-                <IconButton
-                  aria-label='Instagram'
-                  href='#'
-                  target='_blank'
-                  sx={{
-                    color: theme.palette.primary.main,
-                  }}
-                >
-                  <InstagramIcon fontSize='large' />
-                </IconButton>
+                
                 <IconButton
                   aria-label='GitHub'
-                  href='#'
+                  href='https://github.com/namugarurasyda'
                   target='_blank'
                   sx={{
                     color: theme.palette.primary.main,

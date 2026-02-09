@@ -23,6 +23,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import ListIcon from '@mui/icons-material/FormatListBulleted';
 import MenuIcon from '@mui/icons-material/Menu';
 import TextIcon from '@mui/icons-material/TextSmsOutlined';
+import CodeIcon from '@mui/icons-material/Code';
 
 import CustomButton from '../components/CustomButton';
 
@@ -77,6 +78,7 @@ const Header = ({ onSidebarOpen }) => {
             }}
           >
             <CustomButton href='#home' icon={<HomeIcon />} text='Home' />
+            <CustomButton href='#skills' icon={<CodeIcon />} text='Skills' />
             <CustomButton href='#about' icon={<InfoIcon />} text='About' />
             <CustomButton
               href='#projects'
@@ -113,16 +115,16 @@ const Header = ({ onSidebarOpen }) => {
               >
                 <LinkedInIcon fontSize='large' />
               </IconButton>
-              <IconButton
-                aria-label='Instagram'
-                href='namugarurasyda@gmail.com'
+              {/* <IconButton
+                aria-label='Medium'
+                href='https://medium.com/@sydamug'
                 target='_blank'
                 sx={{
-                  color: theme.palette.primary.main,
+                  // color: theme.palette.primary.main,
                 }}
               >
                 <InstagramIcon fontSize='large' />
-              </IconButton>
+              </IconButton> */}
               <IconButton
                 aria-label='GitHub'
                 href='https://github.com/namugarurasyda'

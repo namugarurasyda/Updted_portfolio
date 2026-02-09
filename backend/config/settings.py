@@ -1,5 +1,13 @@
 import os
+import dj_database_url
+from pathlib import Path
+from dotenv import load_dotenv
 from decouple import config
+
+# Load the .env file
+load_dotenv()
+
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -10,6 +18,13 @@ DEBUG = config('DEBUG')
 ALLOWED_HOSTS = [
   'localhost',
   '127.0.0.1',
+  'portfolio-backend-1.onrender.com',
+]
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "https://portfolio-frontend.onrender.com",
 ]
 
 # Application definition
@@ -34,6 +49,7 @@ INSTALLED_APPS = [
   'contact',
   'hero',
   'footer',
+  'skills'
 ]
 
 MIDDLEWARE = [
@@ -71,17 +87,24 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-  'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': config('DATABASE_NAME'),
-    'USER': config('DATABASE_USER'),
-    'PASSWORD': config('DATABASE_PASS'),
-    'HOST': config('DATABASE_HOST'),
-    'PORT': '',  # leave blank so the default port is selected
-  }
-}
+# DATABASES = {
+#   'default': {
+#     'ENGINE': 'django.db.backends.postgresql',
+#     'NAME': config('DATABASE_NAME'),
+#     'USER': config('DATABASE_USER'),
+#     'PASSWORD': config('DATABASE_PASS'),
+#     'HOST': config('DATABASE_HOST'),
+#     'PORT': '',  # leave blank so the default port is selected
+#   }
+# }
 
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL'),
+        conn_max_age=600,
+        ssl_require=True
+    )
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

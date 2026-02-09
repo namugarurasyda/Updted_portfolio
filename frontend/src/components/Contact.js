@@ -24,7 +24,7 @@ const Contact = () => {
 
   const fetchContact = () => {
     axios
-      .get('/contact', {
+      .get('contact', {
         headers: {
           Accept: 'application/json',
           'Access-Control-Allow-Origin': process.env.BACKEND_URL,

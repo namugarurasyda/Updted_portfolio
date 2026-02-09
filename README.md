@@ -2,7 +2,7 @@
 
 This is a portfolio website built using **Django 4**, **Django REST Framework 3**, **Next.js 13**, and **Material UI 5**. The app uses a **PostgreSQL** database to store data.
 
-![plot](https://github.com/namugarurasyda/TSX-Unstop-Web-main/blob/master/frontend/public/images/main.png?raw=true)
+![plot](d://github.com/namugarurasyda/TSX-Unstop-Web/blob/main/frontend/public/images/main.png?raw=true)
 
 ## Table of Contents
 

@@ -2,10 +2,11 @@
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import { useTheme, useMediaQuery } from '@mui/material';
+import Link from 'next/link';
 
 // Material Icons
 import InfoIcon from '@mui/icons-material/HelpOutline';
-import PlayIcon from '@mui/icons-material/PlayCircleOutlineOutlined';
+import EmailIcon from '@mui/icons-material/EmailOutlined';
 
 const HeroButtons = () => {
   const theme = useTheme();
@@ -14,64 +15,59 @@ const HeroButtons = () => {
   });
 
   return (
-    <>
-      <Box
-        display='flex'
-        flexDirection={{ xs: 'column', sm: 'row' }}
-        alignItems={{ xs: 'stretched', sm: 'flex-start' }}
-        justifyContent='center'
-        marginTop={4}
+    <Box
+      display='flex'
+      flexDirection={{ xs: 'column', sm: 'row' }}
+      alignItems={{ xs: 'stretch', sm: 'flex-start' }}
+      justifyContent='center'
+      marginTop={4}
+    >
+      <Button
+        component='a'
+        variant='contained'
+        size='large'
+        color='primary'
+        href='https://tinyurl.com/NamugaruraSydaCV'
+        target="_blank"
+        rel="noopener noreferrer"
+        startIcon={<InfoIcon />}
+        fullWidth={!isMd}
+        disableElevation
+        sx={{
+          marginRight: { sm: '15px' },
+          marginBottom: { xs: 2, sm: 0 },
+          border: '2px solid transparent',
+          '&:hover': {
+            backgroundColor: 'transparent',
+            color: theme.palette.primary.main,
+            border: `2px solid ${theme.palette.primary.main}`,
+          },
+        }}
       >
-        <Button
-          component='a'
-          variant='contained'
-          size='large'
-          color='primary'
-          href='https://europa.eu/europass/eportfoliio/screen/my-library?lang=en'
-          startIcon={<InfoIcon />}
-          fullWidth={isMd ? false : true}
-          disableElevation={true}
-          sx={{
-            marginRight: '15px',
-            border: '2px solid transparent',
-            '&:hover': {
-              backgroundColor: 'transparent',
-              color: theme.palette.primary.main,
-              border: `2px solid ${theme.palette.primary.main}`,
-            },
-          }}
-        >
-          Resume
-        </Button>
-        <Box
-          marginTop={{ xs: 2, sm: 0 }}
-          marginLeft={{ sm: 1 }}
-          width={{ xs: '100%', md: 'auto' }}
-        >
-          <Button
-            component='a'
-            variant='outlined'
-            color='primary'
-            size='large'
-            href='Projects'
-            startIcon={<PlayIcon />}
-            fullWidth={isMd ? false : true}
-            disableElevation={true}
-            sx={{
-              marginRight: '15px',
-              border: `2px solid ${theme.palette.primary.main}`,
-              '&:hover': {
-                backgroundColor: theme.palette.primary.main,
-                color: theme.palette.common.white,
-                border: `2px solid ${theme.palette.primary.main}`,
-              },
-            }}
-          >
-            Sample projects
-          </Button>
-        </Box>
-      </Box>
-    </>
+        Resume
+      </Button>
+
+      <Button
+        component={Link}
+        href='#contact'
+        variant='outlined'
+        color='primary'
+        size='large'
+        startIcon={<EmailIcon /> }
+        fullWidth={!isMd}
+        disableElevation
+        sx={{
+          border: `2px solid ${theme.palette.primary.main}`,
+          '&:hover': {
+            backgroundColor: theme.palette.primary.main,
+            color: theme.palette.common.white,
+            border: `2px solid ${theme.palette.primary.main}`,
+          },
+        }}
+      >
+        Let's get in touch
+      </Button>
+    </Box>
   );
 };
 

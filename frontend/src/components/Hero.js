@@ -14,13 +14,70 @@ import HeroButtons from './HeroButtons';
 axios.defaults.xsrfCookieName = 'csrftoken';
 axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
+// Typing effect component
+const TypedText = ({ text, speed = 100, theme }) => {
+  const [displayText, setDisplayText] = useState('');
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    if (currentIndex < text.length) {
+      const timeout = setTimeout(() => {
+        setDisplayText(prev => prev + text[currentIndex]);
+        setCurrentIndex(prev => prev + 1);
+      }, speed);
+      return () => clearTimeout(timeout);
+    } else {
+      // Wait 2 seconds then restart
+      const restartTimeout = setTimeout(() => {
+        setDisplayText('');
+        setCurrentIndex(0);
+      }, 2000);
+      return () => clearTimeout(restartTimeout);
+    }
+  }, [currentIndex, text, speed]);
+
+  return (
+    <Typography
+      color={theme.palette.text.primary}
+      variant='h4'
+      fontWeight={700}
+      component='span'
+      sx={{
+        fontFamily: '"Courier New", Courier, monospace',
+        textShadow: '1px 1px 2px rgba(0,0,0,0.1)',
+        '&::after': {
+          content: '"|"',
+          opacity: 1,
+          animation: 'blink 1s infinite',
+          marginLeft: '2px',
+          color: theme.palette.primary.main,
+          fontWeight: 'bold',
+        },
+        '@keyframes blink': {
+          '0%, 50%': { opacity: 1 },
+          '51%, 100%': { opacity: 0 },
+        },
+      }}
+    >
+      {displayText}
+    </Typography>
+  );
+};
+
 const Hero = () => {
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up('md'), {
     defaultMatches: true,
   });
 
-  const [hero, setHero] = useState([]);
+  const [hero, setHero] = useState([
+    // {
+    //   title: "I'm",
+    //   subtitle: "Full Stack Developer",
+    //   description: "Passionate about creating amazing web experiences with modern technologies.",
+    //   image: "/images/syda.jpg"
+    // }
+  ]);
 
   const fetchHero = () => {
     axios
@@ -57,18 +114,13 @@ const Hero = () => {
                   <Typography
                     color={theme.palette.primary.main}
                     variant='h4'
-                    component='span'
+                    component='div'
                     fontWeight={700}
+                    marginBottom={1}
                   >
-                    {item.title}{' '}
+                    {item.title}
                   </Typography>
-                  <Typography
-                    color={theme.palette.text.primary}
-                    variant='h4'
-                    fontWeight={700}
-                  >
-                    {item.subtitle}
-                  </Typography>
+                  <TypedText text={item.subtitle} speed={100} theme={theme} />
                 </Box>
                 <Box marginBottom={3}>
                   <Typography
