@@ -18,8 +18,7 @@ DEBUG = config('DEBUG')
 ALLOWED_HOSTS = [
   'localhost',
   '127.0.0.1',
-  'portfolio-backend-1.onrender.com',
-  "https://backend-portfolio-1162.onrender.com"
+  'backend-portfolio-1162.onrender.com',
 ]
 
 
