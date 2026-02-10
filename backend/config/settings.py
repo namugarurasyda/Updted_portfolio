@@ -19,12 +19,13 @@ ALLOWED_HOSTS = [
   'localhost',
   '127.0.0.1',
   'portfolio-backend-1.onrender.com',
+  "https://backend-portfolio-1162.onrender.com"
 ]
 
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://portfolio-frontend.onrender.com",
+    "https://backend-portfolio-1162.onrender.com"
 ]
 
 # Application definition
