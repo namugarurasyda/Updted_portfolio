@@ -60,7 +60,7 @@ const About = () => {
             color={theme.palette.text.secondary}
             data-aos='fade-up'
           >
-            I am a passionate Python developer and designer that focused on crafting elegant solutions to solve different problems. My journey into the world of technology has been fueled by desire to learn for a  purpose, curiosity and a desire to create innovative digital experiences. I enjoy the challenge of transforming complex ideas into intuitive and visually appealing products. As a freelancer, I am dedicated to delivering high-quality work on time and within budget.
+           I am an experienced Full Stack Engineer and Technical Educator specialized in building scalable, secure, and high-performance web applications. While my expertise is rooted in both python and javascript. I take a holistic approach to development—integrating modern frontend frameworks, robust database design, and containerized deployment workflows.
           </Typography>
         </Box>
         <Grid container spacing={4}>
