@@ -15,16 +15,27 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG')
 
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+}
+
+# for Media files
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 ALLOWED_HOSTS = [
   'localhost',
   '127.0.0.1',
   'backend-portfolio-1162.onrender.com',
+  'onrender.com'
+
 ]
 
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://backend-portfolio-1162.onrender.com"
+    "https://updted-portfolio.onrender.com "
 ]
 
 # Application definition
@@ -40,6 +51,9 @@ INSTALLED_APPS = [
   # 3rd party
   'rest_framework',
   'corsheaders',
+  'cloudinary_storage',
+  'cloudinary',
+
 
   # Local
   'about',
