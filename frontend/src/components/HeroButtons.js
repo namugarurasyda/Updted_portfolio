@@ -27,7 +27,7 @@ const HeroButtons = () => {
         variant='contained'
         size='large'
         color='primary'
-        href='https://tinyurl.com/NamugaruraSydaCV'
+        href='https://tinyurl.com/namugarura-Syda-CV'
         target="_blank"
         rel="noopener noreferrer"
         startIcon={<InfoIcon />}
