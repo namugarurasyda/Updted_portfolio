@@ -1,12 +1,3 @@
-{
-
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "config/wsgi.py"
-    }
-  ]
-}
 
 
 
