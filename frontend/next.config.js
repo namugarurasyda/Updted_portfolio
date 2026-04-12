@@ -29,6 +29,10 @@ module.exports = {
         source: '/footer',
         destination: `${process.env.BACKEND_URL}/footer/`,
       },
+      {
+        source: '/skills',
+        destination: `${process.env.BACKEND_URL}/skills/`,
+      },
     ];
   },
 };

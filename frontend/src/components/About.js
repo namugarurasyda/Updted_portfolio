@@ -60,7 +60,11 @@ const About = () => {
             color={theme.palette.text.secondary}
             data-aos='fade-up'
           >
-           I am an experienced Full Stack Engineer and Technical Educator specialized in building scalable, secure, and high-performance web applications. While my expertise is rooted in both python and javascript. I take a holistic approach to development—integrating modern frontend frameworks, robust database design, and containerized deployment workflows.
+           I am an experienced Full Stack Engineer with 4 years of experience. I specialize in React, Next.js and Nest.js and
+           Typescript for building scalable, secure, and high-performance web applications. While my expertise is rooted in both
+           python and javascript. I take a holistic approach to development—integrating modern frontend frameworks, robust
+           database design, and containerized deployment workflows with strong foundation in TDD, agile methodologies.I am
+           passionate about leveraging logic build high integrity financial system
           </Typography>
         </Box>
         <Grid container spacing={4}>
