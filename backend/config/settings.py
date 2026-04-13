@@ -28,6 +28,7 @@ ALLOWED_HOSTS = [
   'localhost',
   '127.0.0.1',
   'backend-portfolio-1162.onrender.com',
+  
   'onrender.com', 
   '.vercel.app'
 

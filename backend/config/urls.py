@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
+from contact.views import home_view
 from django.urls import path, include
 
 urlpatterns = [
@@ -13,6 +14,8 @@ urlpatterns = [
   path('contact/', include('contact.urls')),
   path('hero/', include('hero.urls')),
   path('footer/', include('footer.urls')),
+  path('', home_view, name='home')
+
 ]
 
 if settings.DEBUG:
